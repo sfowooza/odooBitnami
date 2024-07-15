@@ -1,4 +1,5 @@
 # odooBitnami
-## create Odoo Folder
-``` mkdir Odoo17
+### create Odoo Folder
+
+```mkdir Odoo17
 
