@@ -45,6 +45,18 @@ To install this project, follow these steps:
     ```bash
     mkdir -p odoo/custom_addons
     ```
+9. check user is active and has permissions
+    ```bash
+    UPDATE res_users 
+    SET active = true, share = false 
+    WHERE login = 'user@example.com';
+    ```
+10 Set a temporary password
+    ```bash
+    UPDATE res_users 
+    SET password = 'temppassword123'
+    WHERE login = 'user@example.com';
+    ```
 ## Usage
 
 Go to the borwser and open odoo with the port you specified
