@@ -52,6 +52,7 @@ To install this project, follow these steps:
     WHERE login = 'user@example.com';
     ```
 10 Set a temporary password
+
     ```bash
     UPDATE res_users 
     SET password = 'temppassword123'
