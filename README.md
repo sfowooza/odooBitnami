@@ -118,3 +118,5 @@ Go to the borwser and open odoo with the port you specified
 
 ```bash
 localhost:78
+As shown below
+![odoo1](https://github.com/user-attachments/assets/55004fa4-b100-471d-a24a-ccc97ba475df)
