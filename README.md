@@ -1,3 +1,4 @@
+
 # Odoo Bitnami Installation
 
 We will install Odoo 17 the bitnami odoo package on Ubuntu 
@@ -145,13 +146,22 @@ However, it's important to note that these are default credentials, and for secu
     ```
     psql -U bn_odoo -d bitnami_odoo
     ```
-15. check user is active and has permissions
+15. To list database roles (users):
+    ```
+    \du
+    ```
+    This shows roles and their attributes, but not emails or passwords.
+    To list users with their login (which is often an email in Odoo):
+    ```
+    SELECT id, login, active FROM res_users;
+    ```
+17. check user is active and has permissions
     ```bash
     UPDATE res_users 
     SET active = true, share = false 
     WHERE login = 'user@example.com';
     ```
-16. Set a temporary password
+18. Set a temporary password
 
     ```bash
     UPDATE res_users 
