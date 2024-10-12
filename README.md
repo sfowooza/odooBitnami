@@ -98,7 +98,24 @@ To install this project, follow these steps:
     ```
     ![docker6](https://github.com/user-attachments/assets/019a4d92-8407-47fd-b01a-249c2efdc734)
 
+    ```
+## Usage
 
+Go to the borwser and open odoo with the port you specified
+
+```bash
+localhost:78
+```
+As shown below
+
+![odoo1](https://github.com/user-attachments/assets/55004fa4-b100-471d-a24a-ccc97ba475df)
+
+After installing Odoo 17 using the Bitnami Docker image and running the container, you can typically access the Odoo web interface using the following default credentials:
+```bash
+Email: user@example.com
+Password: bitnami
+```
+However, it's important to note that these are default credentials, and for security reasons, you should change them immediately after your first login.
 12. check user is active and has permissions
     ```bash
     UPDATE res_users 
@@ -111,14 +128,3 @@ To install this project, follow these steps:
     UPDATE res_users 
     SET password = 'temppassword123'
     WHERE login = 'user@example.com';
-    ```
-## Usage
-
-Go to the borwser and open odoo with the port you specified
-
-```bash
-localhost:78
-```
-As shown below
-
-![odoo1](https://github.com/user-attachments/assets/55004fa4-b100-471d-a24a-ccc97ba475df)
