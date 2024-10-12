@@ -37,7 +37,7 @@ To install this project, follow these steps:
     vim docker-compose.yml
     ```
     #### Or Copy paste this below docker-compose.yml
-   ```
+   ```bash
 version: '3.8'
 services:
   postgresql:
