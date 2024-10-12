@@ -3,6 +3,7 @@
 We will install Odoo 17 the bitnami odoo package on Ubuntu 
 
 ## Requirements
+- Text Editor - Vim , VS Code etc
 
 - Docker Installation:
   ```
@@ -21,19 +22,56 @@ To install this project, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/sfowooza/github.com/odooBitnami.git
+    git clone https://github.com/bitnami/containers/blob/main/bitnami/odoo/docker-compose.yml
     ```
 2. Navigate to the project directory:
     ```bash
-    mkdir Odoo17 
+    mkdir Odoo17Bitnami
     ```
 3. Enter into project:
     ```bash
-    cd Odoo17
+    cd Odoo17Bitnami
     ```
-4. Create Docker-compose YAML file inside Odoo17:
+4. Create Docker-compose YAML file inside Odoo17Bitnami:
     ```bash
     vim docker-compose.yml
+    ```
+    ```
+    # Copyright Broadcom, Inc. All Rights Reserved.
+# SPDX-License-Identifier: APACHE-2.0
+
+version: '3.8'
+services:
+  postgresql:
+    image: docker.io/bitnami/postgresql:16
+    volumes:
+      - 'postgresql_data:/bitnami/postgresql'
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - POSTGRESQL_USERNAME=bn_odoo
+      - POSTGRESQL_DATABASE=bitnami_odoo
+  odoo:
+    image: docker.io/bitnami/odoo:16
+    ports:
+      - '91:8069'
+    volumes:
+      - 'odoo_data:/bitnami/odoo'
+      - '/home/sendowooza/Desktop/Odoo16Bitnami/odoo/custom_addons:/opt/bitnami/odoo/custom_addons'
+    depends_on:
+      - postgresql
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+      - ODOO_DATABASE_HOST=postgresql
+      - ODOO_DATABASE_PORT_NUMBER=5432
+      - ODOO_DATABASE_USER=bn_odoo
+      - ODOO_DATABASE_NAME=bitnami_odoo
+volumes:
+  postgresql_data:
+    driver: local
+  odoo_data:
+    driver: local
     ```
 5. Create a custom addons folder in host:
     ```bash
