@@ -139,7 +139,7 @@ However, it's important to note that these are default credentials, and for secu
 13. Update your odoo configuration file odoo.conf as shown above with your preferred user password and also your host custom addons path :
     ```bash
     addons_path = /opt/bitnami/odoo/addons /opt/bitnami/odoo/custom_addons
-    admin_passwd = SfAvodah*2024#
+    admin_passwd = [Your-set-password]
     ```
 14. check user is active and has permissions
     ```bash
