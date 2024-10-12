@@ -9,6 +9,9 @@ We will install Odoo 17 the bitnami odoo package on Ubuntu
   https://docs.docker.com/desktop/install/linux/ubuntu/
   ```
 - Docker Compose
+  ```
+  https://phoenixnap.com/kb/install-docker-compose-on-ubuntu-20-04
+  ```
 
 ## Installation
 
