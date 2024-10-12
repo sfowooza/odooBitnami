@@ -116,6 +116,7 @@ Email: user@example.com
 Password: bitnami
 ```
 However, it's important to note that these are default credentials, and for security reasons, you should change them immediately after your first login.
+
 12. check user is active and has permissions
     ```bash
     UPDATE res_users 
