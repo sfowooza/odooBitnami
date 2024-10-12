@@ -36,10 +36,8 @@ To install this project, follow these steps:
     ```bash
     vim docker-compose.yml
     ```
-    ```
-    # Copyright Broadcom, Inc. All Rights Reserved.
-# SPDX-License-Identifier: APACHE-2.0
-
+    #### Or Copy paste this below docker-compose.yml
+   ```
 version: '3.8'
 services:
   postgresql:
@@ -73,25 +71,26 @@ volumes:
   odoo_data:
     driver: local
     ```
-5. Create a custom addons folder in host:
+   
+6. Create a custom addons folder in host:
     ```bash
     mkdir -p odoo/custom_addons
     ```
-6. Update the docker-compose.yml file for the host custom_addons to point to container addons folder
+7. Update the docker-compose.yml file for the host custom_addons to point to container addons folder
     ```bash
         volumes:
       - 'odoo_data:/bitnami/odoo'
       - '/OdooBit/odoo/custom_addons:/opt/bitnami/odoo/custom_addons'
     ```
-7. Start Odoo docker compose :
+8. Start Odoo docker compose :
     ```bash
    docker-compose up -d
     ```
-8. Create a custom addons folder in host:
+9. Create a custom addons folder in host:
     ```bash
     mkdir -p odoo/custom_addons
     ```
-9. check user is active and has permissions
+10. check user is active and has permissions
     ```bash
     UPDATE res_users 
     SET active = true, share = false 
