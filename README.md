@@ -90,17 +90,22 @@ To install this project, follow these steps:
     ```bash
    docker-compose up -d
     ```
-10. Create a custom addons folder in host:
+10. Docker will automatically pull odoo bitnami package and create the odoo and odoo postgres container as shown below
+    ![docker4](https://github.com/user-attachments/assets/0448be54-6fa1-4be3-84a0-9e00184a4dac)
+    Confirm the the odoo containers are up and running
     ```bash
-    mkdir -p odoo/custom_addons
+    docker ps -a
     ```
-11. check user is active and has permissions
+    ![docker6](https://github.com/user-attachments/assets/019a4d92-8407-47fd-b01a-249c2efdc734)
+
+
+12. check user is active and has permissions
     ```bash
     UPDATE res_users 
     SET active = true, share = false 
     WHERE login = 'user@example.com';
     ```
-12. Set a temporary password
+13. Set a temporary password
 
     ```bash
     UPDATE res_users 
