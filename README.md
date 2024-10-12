@@ -117,12 +117,12 @@ Password: bitnami
 ```
 However, it's important to note that these are default credentials, and for security reasons, you should change them immediately after your first login.
 
-12. Enter your Odoo container to update user preferences
+11. Enter your Odoo container to update user preferences
     ```bash
     docker exec --user root -it [YOUR ODOO CONTAINER] /bin/bash
     ```
     Replace YOUR ODOO CONTAINER with your Docker odoo container Example : mine is "odoo17bitnami-odoo-1"
-13. Once inside the odoo container install necessary packages :
+12. Once inside the odoo container install necessary packages :
     ```bash
     apt-get update
     ```
@@ -136,14 +136,18 @@ However, it's important to note that these are default credentials, and for secu
     OPTIONALLY: You Can access the Odoo container files through VS Code Docker route as shown below
     
     ![container2](https://github.com/user-attachments/assets/31b7a07e-dfa3-4678-a65c-e92f461dad62)
-
-12. check user is active and has permissions
+13. Update your odoo configuration file odoo.conf as shown above with your preferred user password and also your host custom addons path :
+    ```bash
+    addons_path = /opt/bitnami/odoo/addons /opt/bitnami/odoo/custom_addons
+    admin_passwd = SfAvodah*2024#
+    ```
+14. check user is active and has permissions
     ```bash
     UPDATE res_users 
     SET active = true, share = false 
     WHERE login = 'user@example.com';
     ```
-13. Set a temporary password
+15. Set a temporary password
 
     ```bash
     UPDATE res_users 
