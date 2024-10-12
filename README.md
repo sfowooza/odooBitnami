@@ -6,9 +6,9 @@ We will install Odoo 17 the bitnami odoo package on Ubuntu
 - Text Editor - Vim , VS Code etc
 
 - Docker Installation:
-  ```
-  https://docs.docker.com/desktop/install/linux/ubuntu/
-  ```
+  
+  [Docker Installtion](https://docs.docker.com/desktop/install/linux/ubuntu/)
+  
 - Docker Compose
 
   [Docker Compose Installation] (https://phoenixnap.com/kb/install-docker-compose-on-ubuntu-20-04)
