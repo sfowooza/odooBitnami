@@ -161,9 +161,15 @@ However, it's important to note that these are default credentials, and for secu
     SET active = true, share = false 
     WHERE login = 'user@example.com';
     ```
-18. Set a temporary password
+18. You can update and change to your custom login email
+    ```
+    UPDATE res_users 
+    SET login = 'fssendowooza@gmail.com'
+    WHERE login = 'user@example.com';
+    ```
+20. Set a temporary password
 
     ```bash
     UPDATE res_users 
     SET password = 'temppassword123'
-    WHERE login = 'user@example.com';
+    WHERE login = 'fssendowooza@gmail.com';
