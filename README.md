@@ -141,13 +141,17 @@ However, it's important to note that these are default credentials, and for secu
     addons_path = /opt/bitnami/odoo/addons /opt/bitnami/odoo/custom_addons
     admin_passwd = [Your-set-password]
     ```
-14. check user is active and has permissions
+14. Go to your Postgres Container as in Step 11 and login into the database: bitnami_odoo with user: bn_odoo with the belwo command
+    ```
+    psql -U bn_odoo -d bitnami_odoo
+    ```
+15. check user is active and has permissions
     ```bash
     UPDATE res_users 
     SET active = true, share = false 
     WHERE login = 'user@example.com';
     ```
-15. Set a temporary password
+16. Set a temporary password
 
     ```bash
     UPDATE res_users 
