@@ -20,19 +20,20 @@ We will install Odoo 17 the bitnami odoo package on Ubuntu
 
 To install this project, follow these steps:
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/bitnami/containers/blob/main/bitnami/odoo/docker-compose.yml
-    ```
-2. Navigate to the project directory:
+
+1. Navigate to the project directory:
     ```bash
     mkdir Odoo17Bitnami
     ```
-3. Enter into project:
+2. Enter into project:
     ```bash
     cd Odoo17Bitnami
     ```
-4. Create Docker-compose YAML file inside Odoo17Bitnami:
+3. Clone the repository:
+    ```bash
+    git clone https://github.com/bitnami/containers/blob/main/bitnami/odoo/docker-compose.yml
+    ```
+4. Create/Update the Docker-compose YAML file inside Odoo17Bitnami:
     ```bash
     vim docker-compose.yml
     ```
@@ -41,7 +42,7 @@ To install this project, follow these steps:
     version: '3.8'
     services:
       postgresql:
-        image: docker.io/bitnami/postgresql:16
+        image: docker.io/bitnami/postgresql:17
         volumes:
           - 'postgresql_data:/bitnami/postgresql'
         environment:
@@ -50,9 +51,9 @@ To install this project, follow these steps:
           - POSTGRESQL_USERNAME=bn_odoo
           - POSTGRESQL_DATABASE=bitnami_odoo
       odoo:
-        image: docker.io/bitnami/odoo:16
+        image: docker.io/bitnami/odoo:17
         ports:
-          - '91:8069'
+          - '78:8069'
         volumes:
           - 'odoo_data:/bitnami/odoo'
           - '/home/sendowooza/Desktop/Odoo16Bitnami/odoo/custom_addons:/opt/bitnami/odoo/custom_addons'
@@ -72,31 +73,35 @@ To install this project, follow these steps:
         driver: local
     ```
    
-6. Create a custom addons folder in host:
+5. Create a custom addons folder in host:
     ```bash
     mkdir -p odoo/custom_addons
     ```
-7. Update the docker-compose.yml file for the host custom_addons to point to container addons folder
+6. Update the docker-compose.yml file for the host custom_addons to point to container addons folder
     ```bash
         volumes:
       - 'odoo_data:/bitnami/odoo'
-      - '/OdooBit/odoo/custom_addons:/opt/bitnami/odoo/custom_addons'
+      - '/Odoo17Bitnami/odoo/custom_addons:/opt/bitnami/odoo/custom_addons'
     ```
-8. Start Odoo docker compose :
+7. Update the odoo port to your desired
+   ```bash
+   - '78:8069'
+   ```
+9. Start Odoo docker compose :
     ```bash
    docker-compose up -d
     ```
-9. Create a custom addons folder in host:
+10. Create a custom addons folder in host:
     ```bash
     mkdir -p odoo/custom_addons
     ```
-10. check user is active and has permissions
+11. check user is active and has permissions
     ```bash
     UPDATE res_users 
     SET active = true, share = false 
     WHERE login = 'user@example.com';
     ```
-10 Set a temporary password
+12. Set a temporary password
 
     ```bash
     UPDATE res_users 
