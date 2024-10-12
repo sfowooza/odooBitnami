@@ -38,38 +38,38 @@ To install this project, follow these steps:
     ```
     #### Or Copy paste this below docker-compose.yml
    ```bash
-version: '3.8'
-services:
-  postgresql:
-    image: docker.io/bitnami/postgresql:16
+    version: '3.8'
+    services:
+      postgresql:
+        image: docker.io/bitnami/postgresql:16
+        volumes:
+          - 'postgresql_data:/bitnami/postgresql'
+        environment:
+          # ALLOW_EMPTY_PASSWORD is recommended only for development.
+          - ALLOW_EMPTY_PASSWORD=yes
+          - POSTGRESQL_USERNAME=bn_odoo
+          - POSTGRESQL_DATABASE=bitnami_odoo
+      odoo:
+        image: docker.io/bitnami/odoo:16
+        ports:
+          - '91:8069'
+        volumes:
+          - 'odoo_data:/bitnami/odoo'
+          - '/home/sendowooza/Desktop/Odoo16Bitnami/odoo/custom_addons:/opt/bitnami/odoo/custom_addons'
+        depends_on:
+          - postgresql
+        environment:
+          # ALLOW_EMPTY_PASSWORD is recommended only for development.
+          - ALLOW_EMPTY_PASSWORD=yes
+          - ODOO_DATABASE_HOST=postgresql
+          - ODOO_DATABASE_PORT_NUMBER=5432
+          - ODOO_DATABASE_USER=bn_odoo
+          - ODOO_DATABASE_NAME=bitnami_odoo
     volumes:
-      - 'postgresql_data:/bitnami/postgresql'
-    environment:
-      # ALLOW_EMPTY_PASSWORD is recommended only for development.
-      - ALLOW_EMPTY_PASSWORD=yes
-      - POSTGRESQL_USERNAME=bn_odoo
-      - POSTGRESQL_DATABASE=bitnami_odoo
-  odoo:
-    image: docker.io/bitnami/odoo:16
-    ports:
-      - '91:8069'
-    volumes:
-      - 'odoo_data:/bitnami/odoo'
-      - '/home/sendowooza/Desktop/Odoo16Bitnami/odoo/custom_addons:/opt/bitnami/odoo/custom_addons'
-    depends_on:
-      - postgresql
-    environment:
-      # ALLOW_EMPTY_PASSWORD is recommended only for development.
-      - ALLOW_EMPTY_PASSWORD=yes
-      - ODOO_DATABASE_HOST=postgresql
-      - ODOO_DATABASE_PORT_NUMBER=5432
-      - ODOO_DATABASE_USER=bn_odoo
-      - ODOO_DATABASE_NAME=bitnami_odoo
-volumes:
-  postgresql_data:
-    driver: local
-  odoo_data:
-    driver: local
+      postgresql_data:
+        driver: local
+      odoo_data:
+        driver: local
     ```
    
 6. Create a custom addons folder in host:
