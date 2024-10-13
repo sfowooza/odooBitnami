@@ -111,6 +111,11 @@ As shown below
 
 ![odoo1](https://github.com/user-attachments/assets/55004fa4-b100-471d-a24a-ccc97ba475df)
 
+Caution: Make sure you have opened your specified port via ufw and reload
+```bash
+sudo ufw allow 8080
+```
+
 After installing Odoo 17 using the Bitnami Docker image and running the container, you can typically access the Odoo web interface using the following default credentials:
 ```bash
 Email: user@example.com
