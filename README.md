@@ -195,4 +195,4 @@ However, it's important to note that these are default credentials, and for secu
     Update Apps List in Odoo Apps
     ![appsodoo](https://github.com/user-attachments/assets/125cb307-5f40-4472-99c4-d05bc816dbb2)
 
-    
+    Then go ahead and install the custom module 
