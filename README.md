@@ -179,7 +179,20 @@ However, it's important to note that these are default credentials, and for secu
 
 21. Download and install custom modules in the custom-addons folder
     Custom open source modules can be obtained from the Odoo Apps official site (Link Below) be sure to filter category, Version etc
+    
     [Oddo module App store](https://apps.odoo.com/apps)
+    
     
     Or from the Odoo Community Association (OCA) github handle on the link below
     [OCA Github modules](https://github.com/oca)
+
+    Place the donwloaded module in your local custom addons folder which will automaticlaly be mapped to the host custom addons folder in odoo container
+    Make sure you've opened the appropriate user permissions in your host custom addons folder and given right user ownership rights to the odoo user.
+    
+23. Turn on developer mode in settings on Odoo interface
+    ![devscren](https://github.com/user-attachments/assets/c7b8d346-608e-4d82-9063-3e84901ac966)
+
+    Update Apps List in Odoo Apps
+    ![appsodoo](https://github.com/user-attachments/assets/125cb307-5f40-4472-99c4-d05bc816dbb2)
+
+    
