@@ -102,7 +102,7 @@ To install this project, follow these steps:
     ```
 ## Usage
 
-Go to the borwser and open odoo with the port you specified
+Go to the browser and open odoo with the port you specified
 
 ```bash
 localhost:78
@@ -187,9 +187,13 @@ However, it's important to note that these are default credentials, and for secu
     [OCA Github modules](https://github.com/oca)
 
     Place the donwloaded module in your local custom addons folder which will automaticlaly be mapped to the host custom addons folder in odoo container
-    Make sure you've opened the appropriate user permissions in your host custom addons folder and given right user ownership rights to the odoo user.
+    Make sure you've opened the appropriate user permissions in your host custom addons folder and given appropriate user ownership rights.
+22. Restart Odoo docker container
+    ```
+    docker-compose restart
+    ```
     
-23. Turn on developer mode in settings on Odoo interface
+24. Turn on developer mode in settings on Odoo interface
     ![devscren](https://github.com/user-attachments/assets/c7b8d346-608e-4d82-9063-3e84901ac966)
 
     Update Apps List in Odoo Apps
