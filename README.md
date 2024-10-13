@@ -177,4 +177,9 @@ However, it's important to note that these are default credentials, and for secu
     
 ![odooscre](https://github.com/user-attachments/assets/4ca5801a-3658-4d95-8b30-ec5ed5b7b3f9)
 
-
+21. Download and install custom modules in the custom-addons folder
+    Custom open source modules can be obtained from the Odoo Apps official site (Link Below) be sure to filter category, Version etc
+    [Oddo module App store](https://apps.odoo.com/apps)
+    
+    Or from the Odoo Community Association (OCA) github handle on the link below
+    [OCA Github modules](https://github.com/oca)
