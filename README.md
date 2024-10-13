@@ -173,3 +173,8 @@ However, it's important to note that these are default credentials, and for secu
     UPDATE res_users 
     SET password = 'temppassword123'
     WHERE login = 'fssendowooza@gmail.com';
+
+    
+![odooscre](https://github.com/user-attachments/assets/4ca5801a-3658-4d95-8b30-ec5ed5b7b3f9)
+
+
