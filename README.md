@@ -192,9 +192,11 @@ However, it's important to note that these are default credentials, and for secu
     Or from the Odoo Community Association (OCA) github handle on the link below
     [OCA Github modules](https://github.com/oca)
 
-    Place the donwloaded module in your local custom addons folder which will automaticlaly be mapped to the host custom addons folder in odoo container
+    Place the donwloaded module in your local custom addons folder which will automaticlaly be mapped to the host custom addons folder in odoo container.
+    
     Make sure you've opened the appropriate user permissions in your host custom addons folder and given appropriate user ownership rights.
-22. Restart Odoo docker container
+    
+23. Restart Odoo docker container
     ```
     docker-compose restart
     ```
